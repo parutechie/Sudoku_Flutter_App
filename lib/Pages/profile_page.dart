@@ -221,7 +221,7 @@ class _ProfilePageState extends State<ProfilePage> {
       }
     } catch (e) {
       // Handle errors
-      print('Error fetching profile images: $e');
+      debugPrint('Error fetching profile images: $e');
     }
   }
 
