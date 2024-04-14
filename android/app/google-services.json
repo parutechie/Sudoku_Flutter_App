@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "888896921714",
+    "firebase_url": "https://sudoku-4da6e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sudoku-4da6e",
+    "storage_bucket": "sudoku-4da6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888896921714:android:65ce049754ab5d68aca2eb",
+        "android_client_info": {
+          "package_name": "com.bingiz.sudoku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE5akP1rq7wlKOKTF7tHpSGs_Spw9j9wU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
