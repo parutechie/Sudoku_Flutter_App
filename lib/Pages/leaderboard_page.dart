@@ -171,6 +171,7 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
             ),
 
             //2ns
+            //2ns
             Positioned(
               top: 115,
               left: 10,
@@ -181,52 +182,56 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(50),
-                        image: questResults.isNotEmpty &&
-                                questResults.length > 1
-                            ? DecorationImage(
+                child: questResults.length >= 2
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.circular(50),
+                              image: DecorationImage(
                                 image: NetworkImage(
                                     questResults[1]['profileImageUrl'] ?? ''),
                                 fit: BoxFit.cover,
-                              )
-                            : null,
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              ? questResults[1]['name'] ?? 'Unknown'
-                              : '-',
-                          style: const TextStyle(
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                questResults[1]['name'] ?? 'Unknown',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                // ignore: prefer_interpolation_to_compose_strings
+                                '#' + (questResults[1]['gameTag'] ?? ''),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    : const Center(
+                        child: Text(
+                          '-',
+                          style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
                           ),
                         ),
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              // ignore: prefer_interpolation_to_compose_strings
-                              ? '#' + questResults[1]['gameTag']
-                              : '-',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
               ),
             ),
+
             Positioned(
               top: 98,
               left: 68,
@@ -249,52 +254,56 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(50),
-                        image: questResults.isNotEmpty &&
-                                questResults.length > 1
-                            ? DecorationImage(
+                child: questResults.isNotEmpty
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.circular(50),
+                              image: DecorationImage(
                                 image: NetworkImage(
                                     questResults[0]['profileImageUrl'] ?? ''),
                                 fit: BoxFit.cover,
-                              )
-                            : null,
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              ? questResults[0]['name'] ?? 'Unknown'
-                              : '-',
-                          style: const TextStyle(
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                questResults[0]['name'] ?? 'Unknown',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                // ignore: prefer_interpolation_to_compose_strings
+                                '#' + (questResults[0]['gameTag'] ?? ''),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    : const Center(
+                        child: Text(
+                          '-',
+                          style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
                           ),
                         ),
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              // ignore: prefer_interpolation_to_compose_strings
-                              ? '#' + questResults[0]['gameTag']
-                              : '-',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
               ),
             ),
+
             Positioned(
               top: 65,
               left: 192,
@@ -317,50 +326,53 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 80,
-                      width: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(50),
-                        image: questResults.isNotEmpty &&
-                                questResults.length > 1
-                            ? DecorationImage(
+                child: questResults.length >= 3
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            height: 80,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                              borderRadius: BorderRadius.circular(50),
+                              image: DecorationImage(
                                 image: NetworkImage(
                                     questResults[2]['profileImageUrl'] ?? ''),
                                 fit: BoxFit.cover,
-                              )
-                            : null,
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              ? questResults[2]['name'] ?? 'Unknown'
-                              : '-',
-                          style: const TextStyle(
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                questResults[2]['name'] ?? 'Unknown',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                // ignore: prefer_interpolation_to_compose_strings
+                                '#' + (questResults[2]['gameTag'] ?? ''),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    : const Center(
+                        child: Text(
+                          '-',
+                          style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
                           ),
                         ),
-                        Text(
-                          questResults.isNotEmpty && questResults.isNotEmpty
-                              // ignore: prefer_interpolation_to_compose_strings
-                              ? '#' + questResults[2]['gameTag']
-                              : '-',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
+                      ),
               ),
             ),
             Positioned(
