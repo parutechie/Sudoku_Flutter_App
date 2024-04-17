@@ -124,8 +124,8 @@ class NumberButton extends StatelessWidget {
                           height: 5,
                         ),
                         Container(
-                          height: 20,
-                          width: 20,
+                          height: 15,
+                          width: 15,
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.secondary,
                             borderRadius: BorderRadius.circular(50),
@@ -135,7 +135,7 @@ class NumberButton extends StatelessWidget {
                               '$remainingNumber',
                               style: TextStyle(
                                 fontFamily: 'PoppinsSemiBold',
-                                fontSize: 13,
+                                fontSize: 10,
                                 color: Theme.of(context).colorScheme.onSurface,
                               ),
                             ),

@@ -110,7 +110,7 @@ class _SplashScreenState extends State<SplashScreen>
                     ),
                   ),
                   const Text(
-                    'Version 1.2.2',
+                    'Version 2.0',
                     style: TextStyle(
                       fontSize: 16,
                       fontFamily: 'PoppinsBold',

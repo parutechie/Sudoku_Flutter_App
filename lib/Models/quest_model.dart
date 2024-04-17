@@ -575,7 +575,7 @@ class _QuestModelState extends State<QuestModel> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 110, // Fixed width for the time text
+                        width: 130,
                         child: Text(
                           ' $formattedTime',
                           style: const TextStyle(

@@ -58,7 +58,7 @@ class _AboutGameState extends State<AboutGame> {
                   style: TextStyle(fontSize: 35, fontFamily: 'PoppinsSemiBold'),
                 ),
                 const Text(
-                  'Version 1.2.2',
+                  'Version 2.0.0',
                   style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'PoppinsBold',

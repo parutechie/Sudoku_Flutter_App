@@ -123,247 +123,252 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      //profile_pic
-                      SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: profileImageUrl != null
-                            ? Image.network(
-                                profileImageUrl!,
-                                fit: BoxFit.cover,
-                                scale: 4,
-                              )
-                            : Image.asset(_profileImage),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Hello,',
-                            style: TextStyle(
-                              fontFamily: 'PoppinsSemiBold',
-                              fontSize: 15,
-                            ),
-                          ),
-                          Text(
-                            '$userName',
-                            style: const TextStyle(
-                              fontFamily: 'PoppinsBold',
-                              fontSize: 20,
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-
-            //daily quest
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
                 children: [
-                  Center(
-                    child: Container(
-                      height: 200,
-                      width: 350,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        image: const DecorationImage(
-                          image: AssetImage('assets/game_assets/card.png'),
-                          fit: BoxFit.cover,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        //profile_pic
+                        SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: profileImageUrl != null
+                              ? Image.network(
+                                  profileImageUrl!,
+                                  fit: BoxFit.cover,
+                                  scale: 4,
+                                )
+                              : Image.asset(_profileImage),
                         ),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(
-                                  children: [
-                                    const Text(
-                                      "Daily Quest",
-                                      style: TextStyle(
-                                        fontFamily: 'PoppinsBold',
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 22,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 5,
-                                    ),
+                            const Text(
+                              'Hello,',
+                              style: TextStyle(
+                                fontFamily: 'PoppinsSemiBold',
+                                fontSize: 15,
+                              ),
+                            ),
+                            Text(
+                              '$userName',
+                              style: const TextStyle(
+                                fontFamily: 'PoppinsBold',
+                                fontSize: 20,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
 
-                                    Text(
-                                      _formatDate(),
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 20,
-                                    ),
-                                    // Figma Flutter Generator Rectangle132Widget - RECTANGLE
-                                    GestureDetector(
-                                      onTap: () {
-                                        _openCalendar(context);
-                                      },
-                                      child: Container(
-                                        width: 77,
-                                        height: 37,
-                                        decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(19),
-                                            topRight: Radius.circular(19),
-                                            bottomLeft: Radius.circular(19),
-                                            bottomRight: Radius.circular(19),
-                                          ),
-                                          color:
-                                              Color.fromRGBO(136, 125, 231, 1),
+              //daily quest
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Center(
+                      child: Container(
+                        height: 200,
+                        width: 350,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          image: const DecorationImage(
+                            image: AssetImage('assets/game_assets/card.png'),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    children: [
+                                      const Text(
+                                        "Daily Quest",
+                                        style: TextStyle(
+                                          fontFamily: 'PoppinsBold',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22,
                                         ),
-                                        child: const Center(
-                                          child: Text(
-                                            'Play',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20,
+                                      ),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
+
+                                      Text(
+                                        _formatDate(),
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        height: 20,
+                                      ),
+                                      // Figma Flutter Generator Rectangle132Widget - RECTANGLE
+                                      GestureDetector(
+                                        onTap: () {
+                                          _openCalendar(context);
+                                        },
+                                        child: Container(
+                                          width: 77,
+                                          height: 37,
+                                          decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(19),
+                                              topRight: Radius.circular(19),
+                                              bottomLeft: Radius.circular(19),
+                                              bottomRight: Radius.circular(19),
+                                            ),
+                                            color: Color.fromRGBO(
+                                                136, 125, 231, 1),
+                                          ),
+                                          child: const Center(
+                                            child: Text(
+                                              'Play',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            Image.asset('assets/images/card_image.png',
-                                width: 170, height: 170),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    child: Text(
-                      "Tips",
-                      style: TextStyle(
-                        fontSize: 17,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0),
-              child: SizedBox(
-                height: 210,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const <Widget>[
-                    LeaderBoardCard(),
-                    HistoryCard(),
-                    HowToCard(),
-                  ],
-                ),
-              ),
-            ),
-            Divider(
-              indent: 50,
-              endIndent: 50,
-              thickness: 2,
-              color: Theme.of(context).shadowColor,
-            ),
-
-            ///
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      showModalBottomSheet(
-                        backgroundColor: Colors.transparent,
-                        transitionAnimationController: firstAniCon,
-                        context: context,
-                        builder: (BuildContext context) => StatefulBuilder(
-                          builder: (context, setState) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                color: Theme.of(context).colorScheme.secondary,
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(35),
-                                  topRight: Radius.circular(35),
-                                ),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color.fromARGB(255, 207, 207, 207),
-                                  ),
+                                    ],
+                                  )
                                 ],
                               ),
-                              child: const DifficultySelectionPage(),
-                            );
-                          },
-                        ),
-                      );
-                    },
-                    child: Container(
-                      height: 65,
-                      width: 160,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          'New Game',
-                          style: TextStyle(
-                            fontFamily: 'PoppinsBold',
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                              Image.asset('assets/images/card_image.png',
+                                  width: 170, height: 170),
+                            ],
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        "Tips",
+                        style: TextStyle(
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: SizedBox(
+                  height: 210,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const <Widget>[
+                      LeaderBoardCard(),
+                      HistoryCard(),
+                      HowToCard(),
+                    ],
+                  ),
+                ),
+              ),
+              Divider(
+                indent: 50,
+                endIndent: 50,
+                thickness: 2,
+                color: Theme.of(context).shadowColor,
+              ),
+
+              ///
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                          backgroundColor: Colors.transparent,
+                          transitionAnimationController: firstAniCon,
+                          context: context,
+                          builder: (BuildContext context) => StatefulBuilder(
+                            builder: (context, setState) {
+                              return Container(
+                                decoration: BoxDecoration(
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(35),
+                                    topRight: Radius.circular(35),
+                                  ),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 4.0,
+                                      color: Color.fromARGB(255, 207, 207, 207),
+                                    ),
+                                  ],
+                                ),
+                                child: const DifficultySelectionPage(),
+                              );
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 65,
+                        width: 160,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primary,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'New Game',
+                            style: TextStyle(
+                              fontFamily: 'PoppinsBold',
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

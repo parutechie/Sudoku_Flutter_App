@@ -591,8 +591,7 @@ class _SudokuGridState extends State<SudokuGrid> {
                         ),
                       ).then((result) {
                         if (result != null && result) {
-                          // Refresh the Sudoku grid page
-                          _loadSoundSettings(); // Assuming _loadSettings loads necessary data for refresh
+                          _loadSoundSettings();
                         }
                       });
                     },
@@ -621,7 +620,8 @@ class _SudokuGridState extends State<SudokuGrid> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 110, // Fixed width for the time text
+                        width: 130,
+                        //height: 60,
                         child: Text(
                           ' $formattedTime',
                           style: const TextStyle(
@@ -767,7 +767,7 @@ class _SudokuGridState extends State<SudokuGrid> {
                     RepaintBoundary(
                       key: _repaintKey,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -786,7 +786,7 @@ class _SudokuGridState extends State<SudokuGrid> {
                             ],
                           ),
                           child: SizedBox(
-                            height: screenSize.width * 0.9,
+                            height: screenSize.width * 0.898,
                             width: screenSize.width * 0.9,
                             child: GridView.builder(
                               gridDelegate:
